@@ -44,3 +44,5 @@ app.use("/api", swaggerUi.serve, swaggerUi.setup(specs));
 app.listen(3030, () => {
   console.log("Express App on port 3030!");
 });
+
+module.exports = app;

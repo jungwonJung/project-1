@@ -24,10 +24,8 @@
  *          properties:
  *              email:
  *                  type: string
- *                  required: true
  *              password:
  *                  type: string
- *                  required: true
  *        responses:
  *          200:
  *            description: "[완료]가입이 정상적으로 완료되었습니다."

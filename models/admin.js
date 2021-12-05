@@ -5,7 +5,10 @@ const jwt = require("jsonwebtoken");
 const adminSchema = new mongoose.Schema({
   password: String,
   email: String,
-  isActivedAt: Boolean,
+  isActivedAt: {
+    type: Boolean,
+    default: false,
+  },
   createdAt: Date,
   updatedAt: Date,
   deletedAt: Date,

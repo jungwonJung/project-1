@@ -1,13 +1,9 @@
 const mongoose = require("mongoose");
 
-const adminSchema = new mongoose.Schema({
-  name: String,
-  pessword: String,
-  email: String,
-  isActivedAt: Boolean,
-  createdAt: Date,
-  updatedAt: Date,
-  deletedAt: Date,
+const collorSchema = new mongoose.Schema({
+  neck: Number,
+  width: Number,
+  size: String,
 });
 
-module.exports = mongoose.model("Admin", adminSchema);
+module.exports = mongoose.model("Collor", collorSchema);

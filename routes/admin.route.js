@@ -2,17 +2,16 @@ const path = require("path");
 const express = require("express");
 const router = express.Router();
 const adminController = require("../controller/admin.js");
-const { validationResult } = require("express-validator");
+const { check, validationResult } = require("express-validator");
 
 // 회원가입
 router.post(
   "/admin",
   [
-    // check("email").isEmail().withMessage("잘못된 이메일 주소입니다"),
-    // check("password")
-    //   .isLength({ min: 6, max: 15 })
-    //   .isAlphanumeric()
-    //   .withMessage("비밀번호는 최소 6자에서 최대 15자로 설정해주세요"),
+    check("email").isEmail().withMessage("잘못된 이메일 주소입니다"),
+    check("password")
+      .isLength({ min: 6, max: 15 })
+      .withMessage("비밀번호는 최소 6자에서 최대 15자로 설정해주세요"),
   ],
   (req, res, next) => {
     const error = validationResult(req).formatWith(({ msg }) => msg);
@@ -21,7 +20,7 @@ router.post(
 
     if (hasError) {
       res.send(
-        "잘못된 이메일 주소이거나, 비밀번호는 최소 6자에서 최대 15자이고, 영문자가 포함되어야합니다"
+        "잘못된 이메일 주소이거나, 비밀번호는 최소 6자에서 최대 15자이고"
       );
     } else {
       next();

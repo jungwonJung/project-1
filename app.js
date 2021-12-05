@@ -1,13 +1,13 @@
-const express = require("express");
 const app = express();
+const http = require("http");
+const cors = require("cors");
+const db = require("./db.js");
+const https = require("https");
+const express = require("express");
 const mongoose = require("mongoose");
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const bodyParser = require("body-parser");
-const db = require("./db.js");
-const http = require("http");
-const https = require("https");
-const cors = require("cors");
 
 db();
 app.use(express.json());

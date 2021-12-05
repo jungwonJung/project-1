@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const adminController = require("../controller/admin.js");
 const path = require("path");
-const { check, validationResult } = require("express-validator");
+const router = express.Router();
+const express = require("express");
+const adminController = require("../controller/admin.js");
+const { validationResult } = require("express-validator");
 
 // 회원가입
 router.post(

@@ -1,8 +1,8 @@
-const Admin = require("../models/admin");
-const bcrypt = require("bcrypt");
-const nodemailer = require("nodemailer"); // 이메일인증
-const jwt = require("jsonwebtoken");
 const path = require("path");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
+const Admin = require("../models/admin");
 
 const MY_SECRET_KEY = "123kladnskldnklsnfgkjs";
 
@@ -113,17 +113,13 @@ exports.confirm = function (request, response) {
   // @ 이 %40 으로 인코딩되는데 디코드 시켜야 swagger 에서도 가능
   const { email } = request.query; // 현재는 링크타고 움직여야함
 
-  Admin.updateOne(
-    { email },
-    { $set: { isActivedAt: true } },
-    function (err, user) {
-      if (err) {
-        console.log(err);
-      } else {
-        response.send(
-          '<script type="text/javascript">alert("Successfully verified"); window.location="https://jamong-prj.xyz/main"; </script>'
-        );
-      }
+  Admin.updateOne({ email }, { $set: { isActivedAt: true } }, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      response.send(
+        '<script type="text/javascript">alert("Successfully verified"); window.location="https://jamong-prj.xyz/main"; </script>'
+      );
     }
-  );
+  });
 };

@@ -1,6 +1,6 @@
 const path = require("path");
-const router = express.Router();
 const express = require("express");
+const router = express.Router();
 const adminController = require("../controller/admin.js");
 const { validationResult } = require("express-validator");
 

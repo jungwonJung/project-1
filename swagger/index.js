@@ -7,7 +7,7 @@
 /**
  * @swagger
  *  paths:
- *    /admin:
+ *    /api/admin:
  *      post:
  *        tags:
  *        - "Admin"

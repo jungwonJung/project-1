@@ -30,11 +30,6 @@ const options = {
         email: "wjdwjd1501@gmail.com",
       },
     },
-    servers: [
-      {
-        url: "http://localhost:3030/api",
-      },
-    ],
   },
   apis: ["./swagger/index.js"],
 };
